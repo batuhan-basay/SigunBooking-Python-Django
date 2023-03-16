@@ -3,14 +3,14 @@ div.datedropper .pick-submit,
 div.datedropper .pick-lg-b .pick-sl:before,
 div.datedropper .pick-m,
 div.datedropper .pick-lg-h {
-    background-color: #1ec755 !important
+    background-color: #911938 !important
 }
 
 div.datedropper .pick-y.pick-jump,
 div.datedropper .pick li span,
 div.datedropper .pick-lg-b .pick-wke,
 div.datedropper .pick-btn {
-    color: #1ec755 !important
+    color: #911938 !important
 }
 
 .comment-by-listing a:hover,
@@ -66,7 +66,7 @@ a.button.border,
 .agent .social-icons li a:hover i,
 #footer .social-icons li a:hover i,
 .headline span i {
-    color: #1ec755
+    color: #911938
 }
 
 .qtyTotal,
@@ -109,7 +109,7 @@ input:checked+.slider,
 #mapnav-buttons a:hover,
 #sign-in-dialog .mfp-close:hover,
 #small-dialog .mfp-close:hover {
-    background-color: #1ec755
+    background-color: #911938
 }
 
 .rangeslider__fill,
@@ -118,28 +118,28 @@ span.blog-item-tag,
 .listing-item-container.list-layout span.tag,
 .tip,
 .mfp-arrow:hover {
-    background: #1ec755
+    background: #911938
 }
 
 .rangeslider__handle {
-    border-color: #1ec755
+    border-color: #911938
 }
 
 .layout-switcher a.active {
-    color: #1ec755;
-    border-color: #1ec755
+    color: #911938;
+    border-color: #911938
 }
 
 #titlebar.listing-titlebar span.listing-tag {
-    border-color: #1ec755;
-    color: #1ec755
+    border-color: #911938;
+    color: #911938
 }
 
 .listing-slider-small .slick-next:hover,
 .listing-slider-small .slick-prev:hover,
 .listing-slider .slick-next:hover,
 .listing-slider .slick-prev:hover {
-    background-color: #1ec755
+    background-color: #911938
 }
 
 .listing-nav-container.cloned .listing-nav li:first-child a.active,
@@ -147,135 +147,135 @@ span.blog-item-tag,
 .listing-nav li:first-child a,
 .listing-nav li a.active,
 .listing-nav li a:hover {
-    border-color: #1ec755;
-    color: #1ec755
+    border-color: #911938;
+    color: #911938
 }
 
 .pricing-list-container h4 {
-    color: #1ec755;
-    border-color: #1ec755
+    color: #911938;
+    border-color: #911938
 }
 
 .sidebar-textbox ul.contact-details li a {
-    color: #1ec755
+    color: #911938
 }
 
 a.button.border {
-    color: #1ec755;
-    border-color: #1ec755
+    color: #911938;
+    border-color: #911938
 }
 
 .trigger.active a,
 .ui-accordion .ui-accordion-header-active:hover,
 .ui-accordion .ui-accordion-header-active {
-    background-color: #1ec755;
-    border-color: #1ec755
+    background-color: #911938;
+    border-color: #911938
 }
 
 .numbered.color ol>li::before {
-    border-color: #1ec755;
-    color: #1ec755
+    border-color: #911938;
+    color: #911938
 }
 
 .numbered.color.filled ol>li::before {
-    border-color: #1ec755;
-    background-color: #1ec755
+    border-color: #911938;
+    background-color: #911938
 }
 
 .info-box {
-    border-top: 2px solid #1ec755;
+    border-top: 2px solid #911938;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
-    background-color: #1ec755;
-    color: #1ec755
+    background-color: #911938;
+    color: #911938
 }
 
 .info-box.no-border {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.93));
-    background-color: #1ec755
+    background-color: #911938
 }
 
 .tabs-nav li a:hover {
-    border-color: #1ec755
+    border-color: #911938
 }
 
 .tabs-nav li a:hover,
 .tabs-nav li.active a {
-    border-color: #1ec755;
-    color: #1ec755
+    border-color: #911938;
+    color: #911938
 }
 
 .style-3 .tabs-nav li a:hover,
 .style-3 .tabs-nav li.active a {
-    border-color: #1ec755;
-    background-color: #1ec755
+    border-color: #911938;
+    background-color: #911938
 }
 
 .checkboxes input[type=checkbox]:checked+label:before {
-    background-color: #1ec755;
-    border-color: #1ec755
+    background-color: #911938;
+    border-color: #911938
 }
 
 .listing-item-container.compact .listing-item-content span.tag {
-    background-color: #1ec755
+    background-color: #911938
 }
 
 .dashboard-nav ul li.active,
 .dashboard-nav ul li:hover {
-    border-color: #1ec755
+    border-color: #911938
 }
 
 .dashboard-list-box .comment-by-listing a:hover {
-    color: #1ec755
+    color: #911938
 }
 
 .opening-day:hover h5 {
-    color: #1ec755 !important
+    color: #911938 !important
 }
 
 .map-box h4 a:hover {
-    color: #1ec755
+    color: #911938
 }
 
 .infoBox-close:hover {
-    background-color: #1ec755;
-    -webkit-text-stroke: 1px #1ec755
+    background-color: #911938;
+    -webkit-text-stroke: 1px #911938
 }
 
 .cluster-visible {
-    background-color: #1ec755
+    background-color: #911938
 }
 
 .cluster-visible:before {
-    border: 7px solid #1ec755;
-    box-shadow: inset 0 0 0 4px #1ec755
+    border: 7px solid #911938;
+    box-shadow: inset 0 0 0 4px #911938
 }
 
 .marker-arrow {
-    border-color: #1ec755 transparent transparent
+    border-color: #911938 transparent transparent
 }
 
 .face.front {
-    border-color: #1ec755;
-    color: #1ec755
+    border-color: #911938;
+    color: #911938
 }
 
 .face.back {
-    background: #1ec755;
-    border-color: #1ec755
+    background: #911938;
+    border-color: #911938
 }
 
 .custom-zoom-in:hover:before,
 .custom-zoom-out:hover:before {
-    -webkit-text-stroke: 1px #1ec755
+    -webkit-text-stroke: 1px #911938
 }
 
 .category-box-btn:hover {
-    background-color: #1ec755;
-    border-color: #1ec755
+    background-color: #911938;
+    border-color: #911938
 }
 
 .message-bubble.me .message-text {
-    color: #1ec755;
+    color: #911938;
     background-color: rgba(249, 25, 66, .05)
 }
 
@@ -285,13 +285,13 @@ a.button.border {
 
 .opening-hours.summary li:hover,
 .opening-hours.summary li.total-costs span {
-    color: #1ec755
+    color: #911938
 }
 
 .payment-tab-trigger>input:checked~label::before {
-    border-color: #1ec755
+    border-color: #911938
 }
 
 .payment-tab-trigger>input:checked~label::after {
-    background-color: #1ec755
+    background-color: #911938
 }

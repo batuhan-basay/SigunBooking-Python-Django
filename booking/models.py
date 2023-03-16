@@ -162,7 +162,7 @@ class Rezervation(models.Model):
     status = models.BooleanField(default=False)
 
     Table_Layout = models.ForeignKey(Table_Layout, on_delete=models.CASCADE, null=True)
-    Places = models.ForeignKey(Places, on_delete=models.CASCADE)
+    Places = models.ManyToManyField(Places)
 
     def __str__(self):
         return f"{self.Places.title, self.booker}"

@@ -30,12 +30,12 @@
 
 						<div class="main-search-input-item">
 							<select data-placeholder="All Categories" class="chosen-select" >
-								<option>All Categories</option>	
-								<option>Shops</option>
-								<option>Hotels</option>
-								<option>Restaurants</option>
-								<option>Fitness</option>
-								<option>Events</option>
+								<option disabled selected value>All Categories</option>
+								{% if categories|length > 0 %}    
+									{% for category in categories %}
+									<option>{{category.category_name}}</option>
+									{% endfor %}
+								{% endif %}
 							</select>
 						</div>
 
@@ -140,122 +140,30 @@
 
 	<!-- Carousel / Start -->
 	<div class="simple-fw-slick-carousel dots-nav">
+		{% if places|length > 0 %}    
+			{% for place in places %}
+			<!-- Listing Item -->
+			<div class="fw-carousel-item">
+				<a href="listings-single-page.html" class="listing-item-container compact">
+					<div class="listing-item">
+						<img src="images/{{ place.cover_img }}" alt="">
 
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-01.jpg" alt="">
+						<div class="listing-badge now-open">Now Open</div>
 
-					<div class="listing-badge now-open">Now Open</div>
+						<div class="listing-item-content">
 
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="3.5"></div>
-						<h3>Tom's Restaurant</h3>
-						<span>964 School Street, New York</span>
+							
+							<h3>{{ place.title }}</h3>
+							<span>{{ place.category }}</span>
+							<span>{{ place.address|striptags|slice:"0:47"}}...</span>
+						</div>
+						<span class="like-icon"></span>
 					</div>
-					<span class="like-icon"></span>
-				</div>
-			</a>
-		</div>
-		<!-- Listing Item / End -->
-
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-02.jpg" alt="">
-					<div class="listing-item-details">
-						<ul>
-							<li>Friday, August 10</li>
-						</ul>
-					</div>
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="5.0"></div>
-						<h3>Sticky Band</h3>
-						<span>Bishop Avenue, New York</span>
-					</div>
-					<span class="like-icon"></span>
-				</div>
-			</a>
-		</div>
-		<!-- Listing Item / End -->		
-
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-03.jpg" alt="">
-					<div class="listing-item-details">
-						<ul>
-							<li>Starting from $59 per night</li>
-						</ul>
-					</div>
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="2.0"></div>
-						<h3>Hotel Govendor</h3>
-						<span>778 Country Street, New York</span>
-					</div>
-					<span class="like-icon"></span>
-				</div>
-
-			</a>
-		</div>
-		<!-- Listing Item / End -->
-
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-04.jpg" alt="">
-
-					<div class="listing-badge now-open">Now Open</div>
-
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="5.0"></div>
-						<h3>Burger House</h3>
-						<span>2726 Shinn Street, New York</span>
-					</div>
-					<span class="like-icon"></span>
-				</div>
-			</a>
-		</div>
-		<!-- Listing Item / End -->
-
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-05.jpg" alt="">
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="3.5"></div>
-						<h3>Airport</h3>
-						<span>1512 Duncan Avenue, New York</span>
-					</div>
-					<span class="like-icon"></span>
-				</div>
-			</a>
-		</div>
-		<!-- Listing Item / End -->
-
-		<!-- Listing Item -->
-		<div class="fw-carousel-item">
-			<a href="listings-single-page.html" class="listing-item-container compact">
-				<div class="listing-item">
-					<img src="images/listing-item-06.jpg" alt="">
-
-					<div class="listing-badge now-closed">Now Closed</div>
-
-					<div class="listing-item-content">
-						<div class="numerical-rating" data-rating="4.5"></div>
-						<h3>Think Coffee</h3>
-						<span>215 Terry Lane, New York</span>
-					</div>
-					<span class="like-icon"></span>
-				</div>
-			</a>
-		</div>
-		<!-- Listing Item / End -->
+				</a>
+			</div>
+			<!-- Listing Item / End -->
+			{% endfor %}
+		{% endif %}
 
 	</div>
 	<!-- Carousel / End -->
@@ -327,7 +235,7 @@
 
 
 <!-- Flip banner -->
-<a href="listings-half-screen-map-list.html" class="flip-banner parallax margin-top-65" data-background="{% static 'images/slider-bg-02.jpg' %}" data-color="#1ec755" data-color-opacity="0.85" data-img-width="2500" data-img-height="1666">
+<a href="listings-half-screen-map-list.html" class="flip-banner parallax margin-top-65" data-background="{% static 'images/slider-bg-02.jpg' %}" data-color="#911938" data-color-opacity="0.85" data-img-width="2500" data-img-height="1666">
 	<div class="flip-banner-content">
 		<h2 class="flip-visible">Expolore top-rated attractions nearby</h2>
 		<h2 class="flip-hidden">Browse Listings <i class="sl sl-icon-arrow-right"></i></h2>
