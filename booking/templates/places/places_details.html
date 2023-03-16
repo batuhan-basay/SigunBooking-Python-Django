@@ -8,7 +8,7 @@
 <div class="listing-slider mfp-gallery-container margin-bottom-0">
     {% if place_img|length > 0 %}    
         {% for img in place_img %}            
-            <a href="images/{{img.image}}" data-background-image="/images/{{img.image}}" class="item mfp-gallery" title="{{img.Places}}"></a>
+            <a href="/images/{{img.image}}" data-background-image="/images/{{img.image}}" class="item mfp-gallery" title="{{img.Places}}"></a>
         {% endfor %}
     {% endif %}
 </div>
