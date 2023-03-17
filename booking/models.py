@@ -66,7 +66,7 @@ class Places(models.Model):
     address = models.CharField(max_length=250, null=True)
     phone_number = models.CharField(max_length=100, null=True)
     website = models.CharField(max_length=100, null=True)
-    map_url = models.CharField(max_length=200, null=True)
+    map_url = models.CharField(max_length=500, null=True)
     is_active = models.BooleanField(default=True, null=True)
     is_home = models.BooleanField(default=True, null=True)
     is_open = models.BooleanField(default=True, null=True)

@@ -23,7 +23,7 @@
 			<!-- Titlebar -->
 			<div id="titlebar" class="listing-titlebar">
 				<div class="listing-titlebar-title">
-					<h2>{{places.title}} <span class="listing-tag">Eat & Drink</span></h2>
+					<h2>{{places.title}} <span class="listing-tag">{{places.category}}</span></h2>
 					<span>
 						<a href="#listing-location" class="listing-address">
 							<i class="fa fa-map-marker"></i>
@@ -49,29 +49,144 @@
 			
 			<!-- Overview -->
 			<div id="listing-overview" class="listing-section">
-
-				<!-- Description -->
-
-				<p>
-					Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
-				</p>
-
-				<p>
-					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
-				</p>
-
+				<!-- Description -->			
+					<p>
+						{{places.description}}
+					</p>
 				<!-- Amenities -->
-				<h3 class="listing-desc-headline">Amenities</h3>
-				<ul class="listing-features checkboxes margin-top-0">
-					<li>Elevator in building</li>
-					<li>Friendly workspace</li>
-					<li>Instant Book</li>
-					<li>Wireless Internet</li>
-					<li>Free parking on premises</li>
-					<li>Free parking on street</li>
-				</ul>
+				{% if place_features|length > 0 %}    
+					{% for features in place_features %}    
+					<h3 class="listing-desc-headline">Amenities</h3>
+					<ul class="listing-features checkboxes margin-top-0">						
+						<div class="form-check">
+									<li>	
+										{% if features.wifi == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.wifi == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Wifi</label>
+									</li>
+									<li>
+										{% if features.smoking_allowed == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.smoking_allowed == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Smoking allowed</label>  
+									</li>
+									<li>
+										{% if features.bike_parking == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.bike_parking == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Bike Parking</label>  
+									</li>
+									<li>
+										{% if features.street_parking == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.street_parking == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Street Parking</label>  
+									</li>
+									<li>
+		
+										{% if features.special == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.special == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Special</label>
+									</li>
+									<li>
+										{% if features.wheelchair_wc == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.wheelchair_wc == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Wheelchair WC</label>  
+									</li>
+									<li>
+										{% if features.wheelchair_ramp == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.wheelchair_ramp == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Wheelchair Ramp</label>  
+									</li>
+									<li>
+										{% if features.wheelchair_accesible == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.wheelchair_accesible == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Wheelchair Accesible</label>  
+									</li>
+									<li>
+		
+										{% if features.elevator == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.elevator == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Elevator</label>
+									</li>
+									<li>
+										{% if features.quide_line == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.quide_line == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Guide Line</label>  
+									</li>
+									<li>
+										{% if features.vegan_option == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.vegan_option == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Vegan Option</label>  
+									</li>
+									<li>
+										{% if features.for_kids == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.for_kids == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">For Kids</label>  
+									</li>
+									<li>
+										{% if features.outdoor_seating == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.outdoor_seating == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Outdoor Seating</label>  
+									</li>
+									<li>
+										{% if features.offers_delivery == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.offers_delivery == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Offers Delivery</label>  
+									</li>
+									<li>
+										{% if features.takes_rezervations == True %}    
+										<input type="checkbox" name="options" id="chk2" checked/>
+										{% elif  features.takes_rezervations == False %}    
+										<input type="checkbox" name="options" id="chk2" />
+										{% endif %}								
+										<label class="checkbox-label">Takes Rezervations</label>  
+									</li>
+				
+						</div>				
+					</ul>
+					{% endfor %}
+				{% endif %}
 			</div>
-
 
 			<!-- Food Menu -->
 			<div id="listing-pricing-list" class="listing-section">
@@ -138,8 +253,7 @@
 				<h3 class="listing-desc-headline margin-top-60 margin-bottom-30">Location</h3>
 
 				<div id="singleListingMap-container">
-					<div id="singleListingMap" data-latitude="40.70437865245596" data-longitude="-73.98674011230469" data-map-icon="im im-icon-Hamburger"></div>
-					<a href="#" id="streetView">Street View</a>
+					<iframe src="{{places.map_url}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 			</div>
 				

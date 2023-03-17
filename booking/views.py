@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from booking.models import Places,Place_Img, Categories
+from booking.models import Places,Place_Img, Categories, Places_Features
 
 # Create your views here.
 
@@ -22,7 +22,8 @@ def places_details(request,slug):
     places = Places.objects.get(slug=slug)
     context = {
         "places": Places.objects.get(slug=slug),
-        "place_img": Place_Img.objects.filter(Places=places.id)
+        "place_img": Place_Img.objects.filter(Places=places.id),
+        "place_features":Places_Features.objects.filter(Places=places.id)
     }
   
 

@@ -4754,13 +4754,7 @@ a.send-message-to-owner.button {
     -moz-columns: 3
 }
 
-.listing-features.checkboxes li {
-    color: #333;
-    display: block;
-    position: relative;
-    margin: 0 0 10px;
-    padding: 0 0 0 30px
-}
+
 
 .listing-features li:last-child {
     margin: 0
