@@ -10,7 +10,7 @@ def index(request):
     context = {
         "places": Places.objects.filter(is_active = True, is_home=True),
         "categories":Categories.objects.all(),
-        "cities":Cities.objects.all(),
+        "cities":Cities.objects.all()
     }
     return render(request, "home/index.html",context)
 
@@ -32,14 +32,44 @@ def places_details(request,slug):
     return render(request, "places/places_details.html",context)
 
 def search(request):
-    search = request.GET.get('search')
-    category = request.GET.get('category')
+    _search = request.GET.get('search')
+    _category = request.GET.get('category')
+    _city = request.GET.get('city')
 
-    print(category)
-    context = {
-        "places": Places.objects.filter(title__icontains=search),
-    }
-    print(Places.objects.get(title=search))    
+    if _category is not None and _search != "" and _city is not None:
+        print("ikiside")
+        context = {
+            "places":  Places.objects.filter(category__category_name__icontains=_category) | Places.objects.filter(title__icontains=_search),
+            "categories":Categories.objects.all(),
+            "cities":Cities.objects.all()
+        }
+    elif _category is not None:
+        print("category")
+        context = {
+            "places":  Places.objects.filter(category__category_name__icontains=_category),
+            "categories":Categories.objects.all(),
+            "cities":Cities.objects.all()
+        }
+    elif _city is not None:
+        print("city")
+        context = {
+            "places": Places.objects.filter(cities__city__icontains=_city),
+            "categories":Categories.objects.all(),
+            "cities":Cities.objects.all()
+        }
+    elif _search != "":
+        print("search")
+        context = {
+            "places": Places.objects.filter(title__icontains=_search),
+            "categories":Categories.objects.all(),
+            "cities":Cities.objects.all()
+        }
+    elif _category is None or _search == "" :
+        context = {
+            "categories":Categories.objects.all(),
+            "cities":Cities.objects.all()
+        }
+
     return render(request, "places/index.html",context)
 
 

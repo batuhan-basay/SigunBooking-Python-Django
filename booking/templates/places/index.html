@@ -33,32 +33,37 @@
 		
 		<!-- Search -->
 		<div class="col-md-12">
-			<div class="main-search-input gray-style margin-top-0 margin-bottom-10">
-
-				<div class="main-search-input-item">
-					<input type="text" placeholder="What are you looking for?" value=""/>
-				</div>
-
-				<div class="main-search-input-item location">
-					<div id="autocomplete-container">
-						<input id="autocomplete-input" type="text" placeholder="Location">
+			<form action='search'>
+				<div class="main-search-input">
+					<div class="main-search-input-item">
+						<input type="text" name='search' placeholder="What are you looking for?" value=""/>
 					</div>
-					<a href="#"><i class="fa fa-map-marker"></i></a>
-				</div>
 
-				<div class="main-search-input-item">
-					<select data-placeholder="All Categories" class="chosen-select" >
-                        <option disabled selected value>All Categories</option>
-                        {% if categories|length > 0 %}    
-                            {% for category in categories %}
-                            <option>{{category.category_name}}</option>
-                            {% endfor %}
-                        {% endif %}
-					</select>
-				</div>
+					<div class="main-search-input-item">
+						<select data-placeholder="All Cities" class="chosen-select" name='city'>
+							<option disabled selected value>All Cities</option>
+							{% if cities|length > 0 %}    
+								{% for city in cities %}
+								<option  >{{city.city}}</option>
+								{% endfor %}
+							{% endif %}
+						</select>
+					</div>
 
-				<button class="button">Search</button>
-			</div>
+					<div class="main-search-input-item">
+						<select data-placeholder="All Categories" class="chosen-select" name='category'>
+							<option disabled selected value>All Categories</option>
+							{% if categories|length > 0 %}    
+								{% for category in categories %}
+								<option  >{{category.category_name}}</option>
+								{% endfor %}
+							{% endif %}
+						</select>
+					</div>
+
+					<button class="button" type="submit">Search</button>
+				</div>						
+			</form>
 		</div>
 		<!-- Search Section / End -->
 
@@ -166,7 +171,7 @@
                         <div class="col-lg-4 col-md-6">
                             <a href="/places/{{ place.slug }}" class="listing-item-container compact">
                                 <div class="listing-item">
-                                    <img src="images/{{ place.cover_img }}" alt="">
+                                    <img src="/images/{{ place.cover_img }}" alt="">
 
                                     <div class="listing-badge now-open">Now Open</div>
 
@@ -182,6 +187,8 @@
                         </div>
                         <!-- Listing Item / End -->
                     {% endfor %}
+				{% else %} 
+				<h2>No places found</h2>
                 {% endif %}
 			</div>
 

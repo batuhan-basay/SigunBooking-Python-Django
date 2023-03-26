@@ -89,6 +89,7 @@ class Places(models.Model):
     closing_time = models.CharField(max_length=150, null=True)
 
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    cities = models.ForeignKey(Cities, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
