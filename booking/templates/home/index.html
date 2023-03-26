@@ -14,34 +14,38 @@
 				<div class="col-md-12">
 					<h2>Find Nearby Attractions</h2>
 					<h4>Expolore top-rated attractions, activities and more</h4>
-
-					<div class="main-search-input">
-
-						<div class="main-search-input-item">
-							<input type="text" placeholder="What are you looking for?" value=""/>
-						</div>
-
-						<div class="main-search-input-item location">
-							<div id="autocomplete-container">
-								<input id="autocomplete-input" type="text" placeholder="Location">
+					<form action='search'>
+						<div class="main-search-input">
+							<div class="main-search-input-item">
+								<input type="text" name='search' placeholder="What are you looking for?" value=""/>
 							</div>
-							<a href="#"><i class="fa fa-map-marker"></i></a>
-						</div>
 
-						<div class="main-search-input-item">
-							<select data-placeholder="All Categories" class="chosen-select" >
-								<option disabled selected value>All Categories</option>
-								{% if categories|length > 0 %}    
-									{% for category in categories %}
-									<option>{{category.category_name}}</option>
-									{% endfor %}
-								{% endif %}
-							</select>
-						</div>
+							<div class="main-search-input-item">
+								<select data-placeholder="All Cities" class="chosen-select" name='city'>
+									<option disabled selected value>All Cities</option>
+									{% if cities|length > 0 %}    
+										{% for city in cities %}
+										<option  >{{city.city}}</option>
+										{% endfor %}
+									{% endif %}
+								</select>
+							</div>
 
-						<button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+							<div class="main-search-input-item">
+								<select data-placeholder="All Categories" class="chosen-select" name='category'>
+									<option disabled selected value>All Categories</option>
+									{% if categories|length > 0 %}    
+										{% for category in categories %}
+										<option  >{{category.category_name}}</option>
+										{% endfor %}
+									{% endif %}
+								</select>
+							</div>
 
-					</div>
+							<button class="button" type="submit">Search</button>
+						</div>						
+					</form>
+
 				</div>
 			</div>
 		</div>

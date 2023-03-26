@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<ul>
+    {% for title in queryset %}
+      <li>
+        {{ title.title }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% endblock %}

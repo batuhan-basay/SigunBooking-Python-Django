@@ -58,6 +58,13 @@ class Categories(models.Model):
     def __str__(self):
         return f"{self.category_name}"
     
+class Cities(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    city = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.city}"
+    
 class Places(models.Model):
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=100, null=True)

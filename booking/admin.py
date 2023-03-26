@@ -1,7 +1,7 @@
 from collections import UserString
 from django.contrib import admin
 
-from booking.models import Categories, Comments,Menu, Menu_Category, Place_Img, Places, Places_Features, Rezervation, Roles, Table_Layout, User
+from booking.models import Cities,Categories, Comments,Menu, Menu_Category, Place_Img, Places, Places_Features, Rezervation, Roles, Table_Layout, User
 
 # Register your models here.
 admin.site.register(Places)
@@ -15,3 +15,4 @@ admin.site.register(Table_Layout)
 admin.site.register(Rezervation)
 admin.site.register(User)
 admin.site.register(Roles)
+admin.site.register(Cities)
